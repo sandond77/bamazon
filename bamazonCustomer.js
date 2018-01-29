@@ -45,14 +45,26 @@ function order(results){
 		{
 			type: "input",
 			name:"order",
-			message: "Enter the Id of the item you would like to order:"
+			message: "Enter the Id of the item you would like to order:",
+			validate: function (input){
+			   	var reg = /^\d+$/;
+			   	if (input > results.length) {
+			   		return ("That item ID does not exist");
+			   	} else {
+			   		return reg.test(input) || "Enter a valid ID a number!";  
+			   	} 	
+			}
 		}
 	]).then(function(response){
 		inquirer.prompt([
 			{
 				type: "input",
 				name:"quantity",
-				message: "How many would you like to order?"
+				message: "How many would you like to order?",
+				validate: function (input){
+				   	var reg = /^\d+$/;
+				   	return reg.test(input) || "You did not enter a number!";
+				}
 			}
 		]).then(function(response2){
 			var order = parseInt(response.order);
@@ -83,7 +95,8 @@ function reset(){
 		{
 			type: "confirm",
 			name:"again",
-			message: "Would you like to order something else?"
+			message: "Would you like to order something else?",
+			default: true
 		}
 	]).then(function(response3){
 		if (response3.again) {
