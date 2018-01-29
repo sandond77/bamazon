@@ -22,11 +22,11 @@ function availableItems(){
 		console.log("----------------------------------");
 
 		var table = new Table({
-			head: ['id', 'Name', 'Price'],
-		  	chars: { 'top': ' ' , 'top-mid': ' ' , 'top-left': ' ' , 'top-right': ' '
-		         , 'bottom': ' ' , 'bottom-mid': ' ' , 'bottom-left': ' ' , 'bottom-right': ' '
+			head: ['id', 'Item', 'Price'],
+		  	chars: { 'top': '' , 'top-mid': '' , 'top-left': ' ' , 'top-right': ' '
+		         , 'bottom': '' , 'bottom-mid': ' ' , 'bottom-left': ' ' , 'bottom-right': ' '
 		         , 'left': ' ' , 'left-mid': ' ' , 'mid': ' ' , 'mid-mid': ' '
-		         , 'right': ' ' , 'right-mid': ' ' , 'middle': ' ' },
+		         , 'right': '' , 'right-mid': ' ' , 'middle': '│' },
 		  	style: { 'padding-left': 0, 'padding-right': 0 }
 		});
 
@@ -45,7 +45,7 @@ availableItems();
 // inquirer.prompt([
 // 	{
 // 		type: list,
-		
+
 // 	}
 // ])
 // 	
