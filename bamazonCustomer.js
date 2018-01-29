@@ -55,26 +55,44 @@ function order(results){
 				message: "How many would you like to order?"
 			}
 		]).then(function(response2){
-			console.log(results.length)
 			var order = parseInt(response.order);
 			var quantity = parseInt(response2.quantity);
-			var itemStock = results[order + 1].stock_quantity;
-			var itemId = results[order + 1].id
-			var orderItemPrice = (results[order - 1].price);
+			var itemStock = results[order - 1].stock_quantity;
+			var itemId = results[order - 1].id;
+			var orderItemPrice = results[order - 1].price;
+			var itemName = results[order - 1].product_name;
 
 			if (itemStock  > quantity) {
 				console.log("Order Received")
-				connection.query("UPDATE products SET stock_quantity=stock_quantity - " + quantity + " WHERE id=" + results[order-1].id , function(err,results){
+				connection.query("UPDATE products SET stock_quantity=stock_quantity - " + quantity + " WHERE id=" + itemId , function(err,results){
 					if (err) throw err;
-					var cost = quantity * orderItemPrice ;
-					console.log("Your total cost is: $" + cost);
+					var cost = (quantity * orderItemPrice).toFixed(2) ;
+					console.log("Your total cost is $" + cost + " for " + quantity + " " + itemName + "(s)");
+					reset();
 				});
-
 			} else {
 				console.log("Sorry, we do not have enough to stock to complete your order.")
+				reset();
 			}
 		})
 	})
 }		
+
+function reset(){
+	inquirer.prompt([
+		{
+			type: "confirm",
+			name:"again",
+			message: "Would you like to order something else?"
+		}
+	]).then(function(response3){
+		if (response3.again) {
+			customer()
+		} else {
+			console.log("Thank you for shopping. Closing connection to bamazon")
+			connection.destroy();
+		};
+	});
+}
 
 customer();
