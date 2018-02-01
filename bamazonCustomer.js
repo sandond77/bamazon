@@ -15,7 +15,7 @@ connection.connect(function(err){
 })
 
 
-function customer(){
+function viewInventory(){
 	var read = connection.query("SELECT * FROM products", function(err,results){
 		if (err) throw err;
 		console.log("\n\nItems For Sale");
@@ -100,7 +100,7 @@ function reset(){
 		}
 	]).then(function(response3){
 		if (response3.again) {
-			customer()
+			viewInventory()
 		} else {
 			console.log("Thank you for shopping. Closing connection to bamazon")
 			connection.destroy();
@@ -108,4 +108,4 @@ function reset(){
 	});
 }
 
-customer();
+viewInventory();
