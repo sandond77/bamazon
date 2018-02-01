@@ -172,7 +172,7 @@ function addProduct(){
 		},
 		{
 			type: "input",
-			message: "Give it a department name",
+			message: "Give it a department.",
 			name: "department"
 		},
 		{
