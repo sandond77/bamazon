@@ -30,12 +30,17 @@ If not, then Bamazon will display a notification and will ask the user if they w
 
 
 ## Manager Role
+The second half of this video provides a tutorial of the customer role. 
+https://youtu.be/xlvHJC_18wI?t=43
+
 Upon start up of the bamazonManger.js file, users are presented with set of menu options:
 
 1. View Products for Sale
 2. View Low Inventory
 3. Add to Inventory
 4. Add New Product
+
+At the end of each function, the user will be prompted to return to the main menu so that they can perform additional actions.
 
 #### View Products for Sale
 Selection of this option will provide the user with a table containing items for sale and their stock levels. 
@@ -47,11 +52,17 @@ If there are no stock items, then another message will appearing stating that no
 #### Add to Inventory
 Selection of this option will provide the user with a table containing items for sale and their stock levels. 
 
-Two prompts will then appear:
-1. Enter the Id of the item
-2. How many units should be added to that item's stock levels
+Two prompts will then appear asking for:
+1. The item's id number
+2. The number of units to be added to be stocked
 
 The mysql database will then be updated and a table with the updated stock levels will be presented.
 
 #### Add New Product
+Several prompts will appear asking for:
+1. The name of the item being sold
+2. The department where the item is sold
+3. The price of the item
+4. The stock level of the item
 
+The mysql database will then be updated and a table with the updated stock levels will be presented.
