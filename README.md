@@ -40,16 +40,16 @@ Upon start up of the bamazonManger.js file, users are presented with set of menu
 3. Add to Inventory
 4. Add New Product
 
-At the end of each function, the user will be prompted to return to the main menu so that they can perform additional actions.
+At the end of each function, the user will be prompted to return to the main menu if they can perform additional actions.
 
-#### View Products for Sale
+### View Products for Sale
 Selection of this option will provide the user with a table containing items for sale and their stock levels. 
 
-#### View Low Inventory
+### View Low Inventory
 Selection of this option will provide the user with a table containing items that are low stock (having less than 5 units remaining).
 If there are no stock items, then another message will appearing stating that nothing is low.
 
-#### Add to Inventory
+### Add to Inventory
 Selection of this option will provide the user with a table containing items for sale and their stock levels. 
 
 Two prompts will then appear asking for:
@@ -58,7 +58,7 @@ Two prompts will then appear asking for:
 
 The mysql database will then be updated and a table with the updated stock levels will be presented.
 
-#### Add New Product
+### Add New Product
 Several prompts will appear asking for:
 1. The name of the item being sold
 2. The department where the item is sold
