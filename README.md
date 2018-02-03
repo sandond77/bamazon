@@ -30,7 +30,7 @@ If not, then Bamazon will display a notification and will ask the user if they w
 
 
 ## Manager Role
-The second half of this video provides a tutorial of the customer role. 
+The second half of this video provides a tutorial of the manager role. 
 https://youtu.be/xlvHJC_18wI?t=43
 
 Upon start up of the bamazonManger.js file, users are presented with set of menu options:
